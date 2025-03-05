@@ -1,0 +1,140 @@
+---
+import JavaScriptIcon from "../icons/tech/JavaScriptIcon.astro"
+import PythonIcon from "../icons/tech/PythonIcon.astro"
+
+import HtmlIcon from "../icons/tech/HtmlIcon.astro"
+import CssIcon from "../icons/tech/CssIcon.astro"
+import TailwindCssIcon from "../icons/tech/TailwindCssIcon.astro"
+import BootstrapIcon from "../icons/tech/BootstrapIcon.astro"
+import AstroIcon from "../icons/tech/AstroIcon.astro"
+import ReactIcon from "../icons/tech/ReactIcon.astro"
+
+import ExpressIcon from "../icons/tech/ExpressIcon.astro"
+import DjangoIcon from "../icons/tech/DjangoIcon.astro"
+import FlaskIcon from "../icons/tech/FlaskIcon.astro"
+
+import PostgreSqlIcon from "../icons/tech/PostgreSqlIcon.astro"
+import SqlServerIcon from "../icons/tech/SqlServerIcon.astro"
+import MongoDbIcon from "../icons/tech/MongoDbIcon.astro"
+
+const PROGRAMING_LANGUAGES = [
+  {
+    name: "JavaScript",
+    icon: JavaScriptIcon
+    
+  },
+  {
+    name: "Python",
+    icon: PythonIcon
+  }
+]
+
+const FRONTEND_SKILLS = [
+  {
+    name: "HTML",
+    icon: HtmlIcon
+  },
+  {
+    name: "CSS",
+    icon: CssIcon
+  },
+  {
+    name: "Tailwind CSS",
+    icon: TailwindCssIcon
+  },
+  {
+    name: "Bootstrap",
+    icon: BootstrapIcon
+  },
+  {
+    name: "Astro",
+    icon: AstroIcon
+  },
+  {
+    name: "React",
+    icon: ReactIcon
+  }
+]
+
+const BACKEND_SKILLS = [
+  {
+    name: "Express",
+    icon: ExpressIcon
+  },
+  {
+    name: "Django",
+    icon: DjangoIcon
+  },
+  {
+    name: "Flask",
+    icon: FlaskIcon
+  }
+]
+
+const DATABASES_SKILLS = [
+  {
+    name: "PostgreSQL",
+    icon: PostgreSqlIcon
+  },
+  {
+    name: "SQL Server",
+    icon: SqlServerIcon
+  },
+  {
+    name: "MongoDB",
+    icon: MongoDbIcon
+  },
+]
+---
+
+<section class="flex flex-wrap gap-8 justify-around">
+  <article class="flex flex-col gap-y-4 w-full max-w-72 py-4">
+    <h1 class="text-center text-lg sm:text-xl font-semibold">Lenguajes de Programación</h1>
+    <ul class="flex flex-row flex-wrap gap-4 justify-center">
+      {
+        PROGRAMING_LANGUAGES.map((skill) => (
+          <li class="flex flex-col items-center gap-y-2">
+            <skill.icon class="size-12" />
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+  <article class="flex flex-col gap-y-4 w-full max-w-72 py-4">
+    <h1 class="text-center text-lg sm:text-xl font-semibold">Desarrollo Frontend</h1>
+    <ul class="flex flex-row flex-wrap gap-6 justify-center">
+      {
+        FRONTEND_SKILLS.map((skill) => (
+          <li class="flex flex-col items-center gap-y-2">
+            <skill.icon class="size-12" />
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+  <article class="flex flex-col gap-y-4 w-full max-w-72 py-4">
+    <h1 class="text-center text-lg sm:text-xl font-semibold">Desarrollo Backend</h1>
+    <ul class="flex flex-row flex-wrap gap-6 justify-center">
+      {
+        BACKEND_SKILLS.map((skill) => (
+          <li class="flex flex-col items-center gap-y-2">
+            <skill.icon class="size-12" />
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+  <article class="flex flex-col gap-y-4 w-full max-w-72 py-4">
+    <h1 class="text-center text-lg sm:text-xl font-semibold">Bases de Datos</h1>
+    <ul class="flex flex-row flex-wrap gap-6 justify-center">
+      {
+        DATABASES_SKILLS.map((skill) => (
+          <li class="flex flex-col items-center gap-y-2">
+            <skill.icon class="size-12" />
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+</section>
+

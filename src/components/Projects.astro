@@ -1,0 +1,58 @@
+---
+import ProjectsItem from "./ProjectsItem.astro"
+
+const PROJECTS = [
+  {
+    created_at: "Enero 2025",
+    title: "InfoValorant - Sitio web de Valorant",
+    description: "Sitio web del videojuego Valorant. Desarrollé páginas responsivas y de interfaz moderna e intuitiva, integré la API del videojuego y desplegué en Vercel.",
+    tags: ["Astro", "Tailwind", "Vercel"],
+    web_link: "https://infovalorant.vercel.app/",
+    github_link:"https://github.com/JoArDiTo/info-valorant",
+    image: "/projects/infovalorant.webp"
+  },
+  {
+    created_at: "Agosto 2024",
+    title: "SISVITA - Sistema de Evaluación de Ansiedad",
+    description: "Aplicación web donde integré hooks personalizados para trabajar con el servidor y formulario.",
+    tags: ["Astro", "React", "Flask", "SQLite"],
+    web_link: "https://sisvita-demo.vercel.app/",
+    github_link:"https://github.com/JoArDiTo/sisvita-beta-client",
+    image: "/projects/sisvita.webp"
+  },
+  {
+    created_at: "Mayo 2024",
+    title: "Fanpage de Twenty One Pilots",
+    description: "Sitio web de la banda norteamericana. Desarrollé páginas responsivas y de interfaz moderna e intuitiva utilizando Tailwind.",
+    tags: ["Astro", "Tailwind"],
+    web_link: "https://twenty-one-pilots-fanpage.vercel.app/",
+    github_link:"https://github.com/JoArDiTo/twenty-one-pilots-fanpage",
+    image: "/projects/twenty-one-pilots.webp"
+  },
+  {
+    created_at: "Octubre 2023",
+    title: "CINEMAX - Sistema de Recomendación de Películas",
+    description: "Aplicación web. Desarrollé una API para interactuar con el cliente. Interfaces con estilos Bootstrap",
+    tags: ["React", "Express", "SQLServer", "Bootstrap"],
+    github_link:"https://github.com/JoArDiTo/movies-recommendation-system",
+    image: "/projects/cinemax.webp"
+  }
+]
+---
+
+<ol class="flex flex-col gap-y-16">                  
+  {
+    PROJECTS.map(({ created_at, title, description, tags, web_link, github_link, image }) => (
+      <ProjectsItem 
+        created_at={ created_at }
+        title={ title }
+        description={ description }
+        tags={ tags }
+        web_link={ web_link }
+        github_link={ github_link }
+        image={ image }
+      />
+    ))
+  }
+</ol>
+

@@ -1,0 +1,73 @@
+---
+import RepositoryGitHub from "../icons/RepositoryGitHub.astro";
+import WebPreview from "../icons/WebPreview.astro";
+
+interface Props {
+  created_at: string;
+  title: string;
+  description: string;
+  tags: string[];
+  web_link?: string;
+  github_link: string;
+  image: string;
+}
+
+const { created_at, title, description, tags, web_link, github_link, image } = Astro.props;
+---
+
+<article
+  class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"
+>
+  <div class="w-full md:w-1/2">
+    <div
+      class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
+    >
+      <img
+        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+        src={ image }
+        loading="lazy"
+        alt={`Imagen del proyecto ${title}`}
+      />
+    </div>
+  </div>
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <span class="opacity-65 pb-2 text-sm">{created_at}</span>
+    <h3 class="text-2xl font-semibold text-sky-300 mb-2">{title}</h3>
+    <ul class="flex flex-row flex-wrap mb-2 gap-x-2">
+      {
+        tags.map((tag) => (
+          <li>
+            <span class="flex gap-x-2 rounded-full text-xs bg-black text-white py-1 px-2 ">
+              {tag}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="text-md mb-2 text-pretty opacity-65">{description}</p>
+    <footer class="flex flex-wrap justify-start mt-4 gap-4">
+      {
+        github_link && (
+          <a 
+            class="rounded-xl px-4 py-2 bg-white/10 flex flex-row gap-x-2 items-center text-md hover:scale-110 transition" 
+            href={github_link}
+            target="_blank"
+          >
+            <RepositoryGitHub class="size-5" /> Código
+          </a>
+        )
+      }
+      {
+        web_link && (
+          <a 
+            class="rounded-xl px-4 py-2 bg-white/10 flex flex-row gap-x-2 items-center text-md hover:scale-110 transition" 
+            href={web_link}
+            target="_blank"
+          >
+            <WebPreview class="size-5" /> Demo
+          </a>
+        )
+      }
+    </footer>
+  </div>
+</article>

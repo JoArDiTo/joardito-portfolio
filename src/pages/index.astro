@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import GitHub from "../icons/GitHub.astro";
+import Mail from "../icons/Mail.astro";
+import Projects from "../components/Projects.astro";
+import Code from "../icons/Code.astro";
+import Person from "../icons/Person.astro";
+import Abilities from "../icons/Abilities.astro";
+import Skills from "../components/Skills.astro";
+
+const experienceYears = new Date().getFullYear() - 2023;
+---
+
+<Layout
+	title="Portfolio de JoArDiTo - Desarrollador Web"
+	description="Soy Armando Diaz, un desarrollador web con experiencia en la creación de aplicaciones web eficientes y escalables. Apasionado por la tecnología y siempre en busca de nuevos desafíos."
+>
+	<main class="px-2">
+		<section class="max-w-[860px] flex flex-col mx-auto py-24 pb-36">
+			<img
+				class="rounded-full size-16 mb-4"
+				src="foto-joardito.webp"
+				alt="Foto de Armando Diaz"
+			/>
+			<h1
+				class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold flex flex-wrap pb-8 gap-y-2 gap-x-4"
+			>
+				Armando Diaz
+				<a
+					class="flex justify-center items-center"
+					href="https://www.linkedin.com/in/jose-armando-diaz-torres/"
+					target="_blank"
+				>
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>
+
+			<h2 class="text-base sm:text-lg lg:text-xl text-wrap">
+				<span class="text-sky-300"
+					>Desarrollador Web con {experienceYears} años de experiencia.
+				</span>Soy una persona proactiva, con iniciativa y guiada a cumplir
+				objetivos para trabajar en equipo de manera organizada y responsable.
+			</h2>
+
+			<nav class="flex flex-wrap gap-4 pt-8">
+				<SocialPill
+					href="https://www.linkedin.com/in/jose-armando-diaz-torres/"
+				>
+					<LinkedIn class="size-4 lg:size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/JoArDiTo/">
+					<GitHub class="size-4 lg:size-6" />
+					GitHub
+				</SocialPill>
+				<SocialPill href="mailto:sm.armando05@gmail.com">
+					<Mail class="size-4 lg:size-6" />
+					Contáctame
+				</SocialPill>
+			</nav>
+		</section>
+
+		<section id="sobre-mi" class="max-w-[860px] flex flex-col mx-auto py-8 pb-36">
+			<h2 class="text-2xl font-semibold pb-6 flex items-center gap-x-2">
+				<Person class="size-8" /> Sobre mi
+			</h2>
+			<article class="flex flex-col items-center justify-center gap-8 md:flex-row">
+				<div class="[&>p]:mb-4 [&>p>strong]:text-sky-300 [&>p>strong]:font-semibold text-pretty order-2 md:order-1">
+					<p>Hola! Soy Armando Diaz. Me dedico al Desarrollo de Software, destacando en <strong>Desarrollo Web</strong> con { experienceYears } años en el rubro. Actualmente me dedico a mis estudios universitarios, proyectos personales y en ofrecer servicios como <strong>freelance</strong>.</p>
+					<p>Destaco en  <strong>proyectos colaborativos e independientes</strong> gracias a mi excelente <strong>gestión del tiempo</strong> y <strong>comunicación eficaz</strong></p>
+					<p>Me consideran un <strong>lider ético</strong> con mentalidad orientada a resultados, permitiéndome adaptarme eficazmente a diferentes desafíos y trabajar de forma proactiva con los integrantes de mi equipo.</p>
+				</div>
+				<img
+					width="200"
+					height="200"
+					src="/foto-joardito.webp"
+					alt="Foto de Armando Diaz"
+					class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20"
+					style="object-position: 50% 50%"
+				/>
+			</article>
+		</section>
+
+		<section id="habilidades" class="max-w-[860px] flex flex-col mx-auto py-8 pb-36">
+			<h2 class="text-2xl font-semibold pb-6 flex items-center gap-x-2">
+				<Abilities class="size-8" /> Habilidades
+			</h2>
+			<Skills />
+		</section>
+
+		<section id="proyectos" class="max-w-[860px] flex flex-col mx-auto py-8 pb-36">
+			<h2 class="text-2xl font-semibold pb-6 flex items-center gap-x-2">
+				<Code class="size-8" /> Proyectos Realizados
+			</h2>
+			<Projects />
+		</section>
+	</main>
+</Layout>
