@@ -25,7 +25,6 @@ const { created_at, title, description, tags, web_link, github_link, image } = A
       <img
         class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
         src={ image }
-        loading="lazy"
         alt={`Imagen del proyecto ${title}`}
       />
     </div>
@@ -64,7 +63,7 @@ const { created_at, title, description, tags, web_link, github_link, image } = A
             href={web_link}
             target="_blank"
           >
-            <WebPreview class="size-5" /> Demo
+            <WebPreview class="size-5" /> Web
           </a>
         )
       }
